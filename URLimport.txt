@@ -1,0 +1,8 @@
+import urllib.request
+
+req = urllib.request.Request('http://bioinformaticsalgorithms.com/data/challengedatasets/DosR.txt')
+with urllib.request.urlopen(req) as response:
+pageData = str(response.read())
+
+pageDataFormatted = pageData.replace('\\r\\n', '\r\n')
+print(pageDataFormatted)
